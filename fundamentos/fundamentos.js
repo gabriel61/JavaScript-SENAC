@@ -160,3 +160,29 @@ console.log(minhaString3);
 
 console.log(minhaString3.length);
 console.log(minhaString3[2]);
+
+// MAIUSCULO
+console.log(minhaString3.toUpperCase());
+// minusculo
+console.log(minhaString3.toLowerCase());
+
+// Data e Hora
+const agora = new Date();
+console.log(agora);
+
+const natal = new Date(2023, 11, 25);
+console.log(natal);
+
+// Objeto Math
+
+// Número PI
+console.log(Math.PI);
+
+// Arredondamento
+console.log(Math.round(3.6));
+
+// Raiz quadrada
+console.log(Math.sqrt(25));
+
+// Potência
+console.log(Math.pow(2, 3));
