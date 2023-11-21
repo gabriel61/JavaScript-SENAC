@@ -36,3 +36,28 @@ body {
     grid-template-columns: repeat(4, 1fr);
 }
 
+button {
+    height: 60px;
+    border: none;
+    font-size: 2em;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc6c6;
+}
+
+button:active {
+    background-color: #eee;
+}
+
+button.num,
+button.ponto,
+button.igual {
+    color: #333;
+}
+
+button.operador {
+    color: #f7931b;
+}
