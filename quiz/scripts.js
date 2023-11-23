@@ -1,5 +1,5 @@
 // Questões
-const question = [
+const questions = [
     {
         question: "Qual estrutura de programação é utilizada para tratamento de erros?",
         choices: ["for", "do while", "try catch", "switch case"],
@@ -9,11 +9,6 @@ const question = [
         question: "Qual é a forma correta de declarar uma variável em JavaScript?",
         choices: ["variable x", "var x", "let x", "const x"],
         answer: "let x",
-    },
-    {
-        question: "O que é DOM em JavaScript?",
-        choices: ["DocumentObjectModel", "DocumentOrderModel", "DynamicObjectMarkup", "DataObjectMethod"],
-        answer: "DocumentObjectModel",
     },
     {
         question: "O que é DOM em JavaScript?",
@@ -46,3 +41,81 @@ let error = 0;
 let answerChosen = false;
 
 // Funções
+function loadQuestion() {
+    const currentQuestionData = questions[currentQuestion];
+    questionElement.innerText = currentQuestionData.question;
+    
+    const choices = shuffleArray(currentQuestionData.choices);
+    for (let i = 0; i < choiceElements.length; i++) {
+        choiceElements[i].innerText = choices[i];
+    }
+
+    answerChosen = false;
+}
+
+function shuffleArray(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+function checkAnswer(e) {
+    if (answerChosen) return;
+    answerChosen = true;
+
+    if (e.target.innerText === questions[currentQuestion].answer) {
+        score++;
+        scoreElement.innerText = "Pontuação: " + score;
+        alert("Correto!");
+    } else {
+        error++;
+        errorElement.innerText = "Erros: " + error;
+        alert(
+            "Errado! A resposta correta é " + questions[currentQuestion].answer + "."
+        );
+    }
+}
+
+choiceElements.forEach((element) => {
+    element.addEventListener("click", checkAnswer);
+});
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    error = 0;
+    scoreElement.innerText = "Pontuação: 0";
+    errorElement.innerText = "Erros: 0";
+    loadQuestion();
+}
+
+nextButton.addEventListener("click", () => {
+    if (!answerChosen) {
+        alert("Por favor, escolha uma resposta antes de prosseguir.");
+        return;
+    }
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+        loadQuestion();
+    } else {
+        alert(
+            "Fim do Quiz! Você acertou " +
+            score +
+            " de " +
+            questions.length +
+            " perguntas."
+        );
+        restartQuiz();
+    }
+});
+
+loadQuestion();
