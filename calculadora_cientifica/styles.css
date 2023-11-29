@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #090909;
+    color: #fff;
+    padding: 1rem;
+}
+
+.header-tittle {
+    text-align: center;
+}
+
+.header-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.header-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.header-form label {
+    margin-bottom: 0.5rem;
+}
+
+.header-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.header-form button {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #7ddd00;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.result-table {
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse;
+}
+
+.result-table th {
+    background-color: #090909;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+.result-table td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    color: #090909;
+    font-size: 14px;
+}
