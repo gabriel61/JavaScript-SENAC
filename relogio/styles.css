@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #022;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.relogio {
+    width: 390px;
+    height: 390px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.riscos {
+    width: 100%;
+    height: 100%;
+    padding-left: 50%;
+    padding-top: 50%;
+    margin-top: -3px;
+}
+
+.risco {
+    width: 145px;
+    height: 5px;
+    position: absolute;
+    transform-origin: left;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.risco .ponto {
+    width: 15px;
+    height: 100%;
+    background-color: #fff;
+}
+
+.ponteiros {
+    width: 100%;
+    height: 100%;
+    padding-left: 50%;
+    padding-top: 50%;
+    margin-top: -100%;
+}
+
+.p {
+    transform-origin: left;
+    transform: rotate(0deg);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.p_segundo {
+    width: 100px;
+    height: 3px;
+    background-color: #f05;
+}
+
+.p_minuto {
+    width: 120px;
+    height: 7px;
+    background-color: #fff;
+}
+
+.p_hora {
+    width: 70px;
+    height: 10px;
+    background-color: #fff;
+}
+
+.ponto_central {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+
+.digital {
+    color: #fff;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 13px;
+}
+
+footer a {
+    color: #ff9;
+}

@@ -1,12 +1,12 @@
-import { soma } from "../math/soma.js";
-import { subtracao } from "../math/subtracao.js";
-import { multiplicacao } from "../math/multiplicacao.js";
-import { divisao } from "../math/divisao.js";
-import { porcentagem } from "../math/pocentagem.js";
-import { potencia } from "../math/potencia.js";
-import { fatorial } from "../math/fatorial.js";
-import { raizQuadrada } from "../math/raiz-quadrada.js";
-import { media } from "../math/media.js";
+import { divisao } from "./math/divisao.js";
+import { fatorial } from "./math/fatorial.js";
+import { media } from "./math/media.js";
+import { multiplicacao } from "./math/multiplicacao.js";
+import { porcentagem } from "./math/porcentagem.js";
+import { potencia } from "./math/potencia.js";
+import { raizQuadrada } from "./math/raiz-quadrada.js";
+import { soma } from "./math/soma.js";
+import { subtracao } from "./math/subtracao.js";       
 
 export class App {
     static initialize(document) {
@@ -61,6 +61,7 @@ export class App {
         );
 
         btnCalcular.addEventListener("click", () => {
+
             resultadoDivisao.innerHTML = divisao(num1.value, num2.value);
             resultadoDivisaoInstead.innerHTML = divisao(num2.value, num1.value);
 
@@ -69,9 +70,6 @@ export class App {
 
             resultadoMedia.innerHTML = media(num1.value, num2.value);
             resultadoMediaInstead.innerHTML = media(num2.value, num1.value);
-
-            resultadoMultiplicacao.innerHTML = multiplicacao(num1.value, num2.value);
-            resultadoMultiplicacaoInstead.innerHTML = multiplicacao(num2.value, num1.value);
 
             resultadoMultiplicacao.innerHTML = multiplicacao(num1.value, num2.value);
             resultadoMultiplicacaoInstead.innerHTML = multiplicacao(num2.value, num1.value);
@@ -90,6 +88,7 @@ export class App {
 
             resultadoSubtracao.innerHTML = subtracao(num1.value, num2.value);
             resultadoSubtracaoInstead.innerHTML = subtracao(num2.value, num1.value);
+            
         });
     }
 }
